@@ -1,1 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>AgroTec Sustentável</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">
+🌱 AgroTec Sustentável
+</div>
+
+<ul>
+
+<li><a href="#sobre">Sobre</a></li>
+<li><a href="#comedouro">Comedouro</a></li>
+<li><a href="#compostagem">Compostagem</a></li>
+<li><a href="#beneficios">Benefícios</a></li>
+<li><a href="#simulador">Simulador</a></li>
+<li><a href="#galeria">Galeria</a></li>
+
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<h1>Agro Forte, Futuro Sustentável</h1>
+
+<p>
+Tecnologia, automação e sustentabilidade trabalhando juntas
+para transformar o campo.
+</p>
+
+<a href="#sobre" class="btn">
+Conheça o Projeto
+</a>
+
+</section>
+
+</header>
+
+<section id="sobre" class="section">
+
+<h2>Sobre o Projeto</h2>
+
+<p>
+
+O AgroTec Sustentável apresenta soluções de agrorobótica
+capazes de automatizar atividades rurais e reduzir impactos
+ambientais.
+
+O sistema é composto por um comedouro automático,
+uma central de compostagem inteligente e recursos de monitoramento.
+
+</p>
+
+</section>
+
+<section id="comedouro" class="section card">
+
+<h2>🤖 Comedouro Automático</h2>
+
+<p>
+
+O sistema identifica o nível de ração e realiza o abastecimento
+automático dos animais.
+
+</p>
+
+<div class="nivel-container">
+
+<div id="nivelRacao"></div>
+
+</div>
+
+<button onclick="alimentar()">
+Simular Alimentação
+</button>
+
+<p id="statusRacao"></p>
+
+</section>
+
+<section id="compostagem" class="section card">
+
+<h2>♻️ Compostagem Inteligente</h2>
+
+<p>
+
+Resíduos orgânicos são reaproveitados para produzir adubo natural.
+
+</p>
+
+<button onclick="ativarCompostagem()">
+Iniciar Compostagem
+</button>
+
+<p id="statusComposto"></p>
+
+</section>
+
+<section id="beneficios" class="section">
+
+<h2>Benefícios</h2>
+
+<div class="cards">
+
+<div class="beneficio">
+<h3>🌱 Sustentabilidade</h3>
+<p>Redução do desperdício.</p>
+</div>
+
+<div class="beneficio">
+<h3>🤖 Automação</h3>
+<p>Mais eficiência no manejo.</p>
+</div>
+
+<div class="beneficio">
+<h3>🐄 Bem-estar Animal</h3>
+<p>Alimentação regular.</p>
+</div>
+
+<div class="beneficio">
+<h3>♻️ Compostagem</h3>
+<p>Produção de adubo orgânico.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="simulador" class="section card">
+
+<h2>📊 Simulador Rural</h2>
+
+<label>Quantidade de animais:</label>
+
+<input
+type="number"
+id="animais"
+placeholder="Digite aqui">
+
+<button onclick="calcular()">
+Calcular
+</button>
+
+<p id="resultado"></p>
+
+</section>
+
+<section id="galeria" class="section">
+
+<h2>Galeria do Projeto</h2>
+
+<div class="galeria">
+
+<img src="img/maquete1.jpg" alt="Maquete">
+<img src="img/maquete2.jpg" alt="Projeto">
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+Projeto Agrinho 2026 • AgroTec Sustentável
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
