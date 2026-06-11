@@ -1,39 +1,47 @@
-# 🌱 Projeto Agrinho - Calculadora de Biodefensivos (Receitas Ecológicas)
+# 💧 Simulador de Irrigação Inteligente
 
-Este é um projeto escolar interativo desenvolvido para o Projeto Agrinho, focado em unir tecnologia e sustentabilidade no campo. O objetivo principal é fornecer uma ferramenta simples e acessível para que os agricultores possam calcular as proporções exatas de ingredientes para caldas e biodefensivos naturais, promovendo a transição para a agricultura orgânica.
+Este é um projeto escolar interativo desenvolvido para o projeto Agrinho. O objetivo principal é demonstrar, através da tecnologia, como os produtores rurais podem monitorar o solo e o clima para otimizar o uso da água, promovendo a preservação ambiental.
 
-Todo o processo de desenvolvimento e alojamento foi feito diretamente no **GitHub**.
+Todo o processo de desenvolvimento e hospedagem foi feito diretamente no **GitHub**.
 
 ---
 
-## 📝 O que são Biodefensivos Ecológicos?
+## 📝 Qual é o objetivo do Simulador?
 
-Os biodefensivos são produtos de origem natural (vegetal, mineral ou animal) utilizados para o controlo de pragas e doenças nas lavouras. Ao contrário dos pesticidas sintéticos e agressivos, as receitas ecológicas protegem a plantação de forma sustentável, sem agredir o solo, os insetos polinizadores (como as abelhas), os lençóis freáticos e a saúde dos agricultores e consumidores finais.
+Na agricultura sustentável, a água é o recurso mais precioso. O desperdício de água através de irrigação excessiva não só prejudica o meio ambiente, como também pode danificar as raízes das plantas e gastar energia elétrica sem necessidade.
 
-## 🚀 Funcionalidades da Aplicação
+Este mini aplicativo simula um sistema de sensores (IoT). Ele cruza os dados de temperatura ambiente com a umidade da terra para avisar o agricultor o momento exato de ligar ou desligar as bombas de água.
 
-O site atua como uma calculadora matemática automática que elimina o risco de erros na preparação das caldas no dia a dia do campo:
+## 🚀 Funcionalidades do Mini Aplicativo
 
-1. **Identificação do Problema:** O utilizador seleciona qual é a praga ou doença que afeta a sua cultura (ex: Pulgões, Lagartas, Fungos).
-2. **Capacidade do Equipamento:** O utilizador insere a capacidade exata do seu pulverizador ou bomba costal (em litros).
-3. **Cálculo de Proporção:** O algoritmo gera instantaneamente a receita com a dosagem exata (em gramas ou mililitros) necessária para aquele volume de água específico, juntamente com o modo de preparação e instruções de aplicação segura.
+O simulador possui um painel de controle interativo com os seguintes elementos:
+
+1. **Controle de Temperatura (°C):** Um *slider* onde o usuário define o calor ambiente (de 10°C a 45°C).
+2. **Controle de Umidade (%):** Um *slider* onde o usuário define o quão molhada está a terra.
+3. **Painel de Diagnóstico:** O sistema calcula instantaneamente e emite avisos coloridos:
+   * **Vermelho (Crítico):** Falta de água.
+   * **Amarelo (Alerta):** Água ok, mas calor extremo gera evaporação rápida.
+   * **Verde (Ideal):** Condições perfeitas, água sendo economizada.
+   * **Azul (Encharcado):** Excesso de água, alerta de desperdício.
 
 ## 🛠️ Tecnologias Utilizadas
 
-Para garantir a simplicidade e a viabilidade do projeto, utilizamos apenas as tecnologias fundamentais do desenvolvimento web:
+Para garantir a viabilidade e interatividade em tempo real, utilizamos tecnologias web fundamentais:
 
-* **HTML:** Estruturação semântica do site e do formulário interativo de cálculo.
-* **CSS:** Estilização responsiva com uma paleta de cores direcionada para a natureza e saúde vegetal, garantindo uma excelente leitura no ecrã do telemóvel, mesmo sob a luz do sol.
-* **JavaScript:** Motor matemático responsável por cruzar a receita base com a quantidade de litros inserida pelo utilizador, gerando o resultado em tempo real.
-* **GitHub e GitHub Pages:** Versionamento de código e alojamento gratuito do site diretamente através do navegador, sem necessidade de servidores externos.
+* **HTML:** Estruturação dos elementos de *range* (deslizantes) na interface.
+* **CSS:** Cores semânticas que mudam dinamicamente para indicar urgência (UX/UI).
+* **JavaScript:** Lógica condicional (`if/else`) e eventos de escuta (`addEventListener`) para reatividade instantânea.
+* **GitHub e GitHub Pages:** Versionamento e hospedagem gratuita.
 
-## 💻 Como Aceder ao Projeto
+## 💻 Como Acessar o Projeto
 
-Como o site está alojado no GitHub Pages, pode aceder-lhe diretamente a partir de qualquer navegador de internet, seja no telemóvel ou no computador, através da ligação gerada pelo GitHub:
+Como o site está hospedado no GitHub Pages, você pode acessá-lo diretamente de qualquer navegador de internet, seja no celular ou no computador, através do link gerado pelo GitHub:
 
-**[Insira aqui a ligação do seu GitHub Pages gerado]**
+**[Insira aqui o link do seu GitHub Pages gerado]**
 
 ---
 
-**Desenvolvido por:** 
-**Contexto:** Projeto Agrinho
+**Desenvolvido por:** Thais Maria s. Antunes
+**Contexto:** Projeto Agrinho 2026
+
+
