@@ -1,50 +1,44 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-width=1.0">
-    <title>Agro Sustentável - Pegada de Carbono</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cisterna Inteligente - Projeto Agrinho</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>🌱 Projeto Agro Sustentável</h1>
-        <p>Tecnologia e sustentabilidade caminhando juntas.</p>
+        <h1>🌧️ Cisterna Inteligente</h1>
+        <p>Projeto Agrinho: Gestão inteligente da água na propriedade rural.</p>
     </header>
 
     <main>
         <section class="info-section">
-            <h2>O que é a Pegada de Carbono?</h2>
-            <p>A pegada de carbono é um indicador ambiental que mede o volume total de gases de efeito estufa (GEE) emitidos direta ou indiretamente por uma pessoa, organização, evento ou produto.</p>
+            <h2>Porquê captar a água da chuva?</h2>
+            <p>O aproveitamento da água da chuva reduz a dependência de fontes externas, garante segurança hídrica nos períodos de seca e promove a sustentabilidade da propriedade agrícola.</p>
         </section>
 
         <section class="app-section">
-            <h2>Calculadora de Emissões na Propriedade</h2>
-            <p>Preencha os dados abaixo com o consumo mensal da sua propriedade para estimar a sua pegada de carbono.</p>
+            <h2>Simulador de Captação Mensal</h2>
+            <p>Insira o tamanho do telhado (da sua estufa, galpão ou casa) para descobrir o potencial de recolha de água na nossa região.</p>
             
-            <form id="carbonForm">
+            <form id="cisternaForm">
                 <div class="input-group">
-                    <label for="diesel">Consumo de Diesel (Litros):</label>
-                    <input type="number" id="diesel" placeholder="Ex: 100" required>
+                    <label for="areaTelhado">Área do Telhado (em metros quadrados - m²):</label>
+                    <input type="number" id="areaTelhado" placeholder="Ex: 50" required min="1">
                 </div>
 
-                <div class="input-group">
-                    <label for="fertilizer">Uso de Fertilizantes (Kg):</label>
-                    <input type="number" id="fertilizer" placeholder="Ex: 50" required>
-                </div>
-
-                <div class="input-group">
-                    <label for="energy">Consumo de Energia (kWh):</label>
-                    <input type="number" id="energy" placeholder="Ex: 200" required>
-                </div>
-
-                <button type="submit">Calcular Pegada de Carbono</button>
+                <button type="submit">Calcular Captação de Água</button>
             </form>
 
             <div id="resultado" class="resultado-oculto">
-                <h3>Sua Pegada de Carbono Estimada:</h3>
-                <p id="valor-resultado">0 kg de CO₂</p>
-                <p id="mensagem-dica"></p>
+                <h3>Potencial de Recolha Mensal:</h3>
+                <p id="valor-litros">0 Litros</p>
+                
+                <div class="impacto-box">
+                    <h4>🌱 O que isso significa na prática?</h4>
+                    <p id="mensagem-impacto"></p>
+                </div>
             </div>
         </section>
     </main>
