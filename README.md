@@ -1,4 +1,4 @@
-# 🌱 Projeto Agro Sustentável — Calculadora de Pegada de Carbono
+# 🌱 Projeto Agro Sustentável - Calculadora de Pegada de Carbono
 
 Este é um projeto escolar interativo desenvolvido para o projeto Agrinho, focado em unir tecnologia e sustentabilidade no campo. O objetivo principal é fornecer uma ferramenta simples e acessível para que agricultores possam medir e entender o impacto ambiental de suas atividades através do cálculo da pegada de carbono.
 
