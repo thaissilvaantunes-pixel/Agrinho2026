@@ -6,13 +6,13 @@
 }
 
 body {
-    background-color: #f1f8e9;
-    color: #333;
+    background-color: #fdf5f6; /* Fundo rosa bem clarinho */
+    color: #4e342e; /* Letras cor de chocolate */
     line-height: 1.6;
 }
 
 header {
-    background-color: #2e7d32;
+    background-color: #d81b60; /* Rosa cereja */
     color: white;
     text-align: center;
     padding: 2.5rem 1rem;
@@ -20,111 +20,102 @@ header {
 }
 
 main {
-    max-width: 800px;
+    max-width: 700px;
     margin: -2rem auto 2rem auto;
     padding: 0 1rem;
     position: relative;
     z-index: 10;
 }
 
-.info-section, .app-section {
+.menu-section {
     background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    margin-bottom: 2rem;
-}
-
-.info-section {
-    border-left: 5px solid #8bc34a;
+    padding: 1.8rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 1.5rem;
+    border-top: 4px solid #f06292;
 }
 
 h2 {
-    color: #2e7d32;
+    color: #d81b60;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.dica {
+    font-size: 0.9rem;
+    color: #8d6e63;
     margin-bottom: 1rem;
 }
 
 .input-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 label {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     font-weight: bold;
-    color: #558b2f;
+    color: #5d4037;
 }
 
 select, input {
     width: 100%;
-    padding: 1rem;
-    border: 1px solid #c5e1a5;
+    padding: 0.8rem;
+    border: 1px solid #f8bbd0;
     border-radius: 6px;
     font-size: 1rem;
-    background-color: #f9fbe7;
+    background-color: #fff;
+    color: #4e342e;
 }
 
-button {
+.doces-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.doce-item {
+    background-color: #fce4ec;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.checkout-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    border: 2px solid #d81b60;
+}
+
+.total-box {
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+    color: #4e342e;
+}
+
+#valorTotal {
+    color: #d81b60;
+    font-size: 2rem;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.btn-whatsapp {
     display: block;
     width: 100%;
-    padding: 1rem;
-    background-color: #4caf50;
+    padding: 1.2rem;
+    background-color: #25D366; /* Verde oficial do WhatsApp */
     color: white;
     border: none;
-    border-radius: 6px;
-    font-size: 1.1rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-button:hover {
-    background-color: #388e3c;
-}
-
-.resultado-oculto {
-    display: none;
-}
-
-.resultado-visivel {
-    display: block;
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background-color: #e8f5e9;
-    border-radius: 8px;
-    border: 2px solid #8bc34a;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-#nome-receita {
-    font-size: 1.4rem;
-    color: #1b5e20;
-    margin-bottom: 1rem;
-}
-
-.receita-box {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: 6px;
-    border-left: 5px solid #4caf50;
-    text-align: left;
-}
-
-.receita-box h4 {
-    color: #2e7d32;
-    margin-bottom: 0.5rem;
-}
-
-.receita-box ul {
-    margin-left: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.mt-15 {
-    margin-top: 15px;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+.btn-whatsapp:hover {
+    background-color: #128C7E;
 }
