@@ -1,37 +1,34 @@
-// Valores médios simplificados de emissão para fins educativos
-// Diesel: ~2.68 kg CO2 por litro
-// Fertilizante (Nitrogenado): ~1.5 kg CO2 por kg
-// Energia Elétrica (Brasil): ~0.085 kg CO2 por kWh
+document.getElementById('cisternaForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-document.getElementById('carbonForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita que a página recarregue ao enviar o formulário
+    // Captura a área inserida pelo utilizador
+    const area = parseFloat(document.getElementById('areaTelhado').value) || 0;
 
-    // Coleta os valores digitados
-    const diesel = parseFloat(document.getElementById('diesel').value) || 0;
-    const fertilizer = parseFloat(document.getElementById('fertilizer').value) || 0;
-    const energy = parseFloat(document.getElementById('energy').value) || 0;
+    // Constantes para o cálculo:
+    // Precipitação média mensal na região (Clevelândia): ~160 mm
+    const precipitacaoMensal = 160; 
+    
+    // Coeficiente de escoamento (perda de água por evaporação ou salpicos no telhado): 0.8 (80% de aproveitamento)
+    const coeficienteEscoamento = 0.8;
 
-    // Calcula as emissões
-    const emissaoDiesel = diesel * 2.68;
-    const emissaoFertilizante = fertilizer * 1.5;
-    const emissaoEnergia = energy * 0.085;
+    // Fórmula: Volume = Área (m²) x Precipitação (mm) x Coeficiente
+    const litrosMensais = area * precipitacaoMensal * coeficienteEscoamento;
 
-    const totalEmissao = emissaoDiesel + emissaoFertilizante + emissaoEnergia;
+    // --- Conversão Pedagógica para o Agrinho ---
+    // Uma horta consome em média cerca de 5 litros de água por m² ao dia (aprox. 150 litros por mês)
+    const consumoHortaMensalPorM2 = 150;
+    const tamanhoHortaM2 = litrosMensais / consumoHortaMensalPorM2;
 
-    // Exibe o resultado na tela
+    // Atualiza a interface (ecrã) com os resultados
     const areaResultado = document.getElementById('resultado');
-    const valorResultado = document.getElementById('valor-resultado');
-    const mensagemDica = document.getElementById('mensagem-dica');
+    const valorLitros = document.getElementById('valor-litros');
+    const mensagemImpacto = document.getElementById('mensagem-impacto');
 
-    valorResultado.innerText = totalEmissao.toFixed(2) + " kg de CO₂";
+    // Formata o número para ter separador de milhares
+    valorLitros.innerText = Math.round(litrosMensais).toLocaleString('pt-PT') + " Litros / Mês";
 
-    // Gera uma dica baseada no resultado
-    if (totalEmissao < 500) {
-        mensagemDica.innerText = "Excelente! Sua propriedade tem um impacto baixo. Continue com as boas práticas!";
-    } else {
-        mensagemDica.innerText = "Atenção: Procure otimizar o uso do trator ou explorar adubação orgânica para reduzir suas emissões.";
-    }
+    mensagemImpacto.innerHTML = `Com <strong>${Math.round(litrosMensais).toLocaleString('pt-PT')} litros</strong> armazenados, é possível garantir a rega completa de uma horta de <strong>${Math.round(tamanhoHortaM2)} metros quadrados</strong> durante um mês inteiro, sem utilizar uma única gota da rede pública de água ou de nascentes!`;
 
-    // Mostra a caixa de resultado
+    // Mostra o resultado com a animação
     areaResultado.className = 'resultado-visivel';
 });
