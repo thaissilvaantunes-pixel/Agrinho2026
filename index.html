@@ -2,93 +2,41 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Agrinho 2026 - Isaac Santin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Irrigação Inteligente - Agrinho</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <h1>Projeto Agrinho 2026</h1>
-    <h2>Desenvolvido por Isaac Santin</h2>
-</header>
+    <div class="container">
+        <header>
+            <h1>💧 Irrigação Inteligente</h1>
+            <p>Ajuste as condições climáticas abaixo e descubra o momento ideal para irrigar a plantação, economizando água e energia!</p>
+        </header>
 
-<nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#agro">Agro Sustentável</a>
-    <a href="#valores">Valores do Agrinho</a>
-    <a href="#atividade">Atividades</a>
-</nav>
+        <main>
+            <div class="control-group">
+                <label for="tempRange">🌡️ Temperatura: <span id="tempValue">25</span>°C</label>
+                <input type="range" id="tempRange" min="10" max="45" value="25">
+            </div>
 
-<main>
-    <section id="sobre">
-        <h2>Sobre o Projeto Agrinho</h2>
-        <div class="card">
-            <p>
-                O Projeto <span class="highlight">Agrinho</span> é uma iniciativa que incentiva crianças e jovens a refletirem sobre valores sociais, cidadania, sustentabilidade e a importância da conexão entre o campo e a cidade.
-            </p>
-            <p>
-                Ele promove ações educativas que ensinam a cuidar do meio ambiente, valorizar a produção agrícola e contribuir para uma sociedade mais justa e consciente.
-            </p>
-            <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80" alt="Campo e natureza">
-        </div>
-    </section>
+            <div class="control-group">
+                <label for="moistureRange">🌱 Umidade do Solo: <span id="moistureValue">50</span>%</label>
+                <input type="range" id="moistureRange" min="0" max="100" value="50">
+            </div>
 
-    <section id="agro">
-        <h2>Agro Sustentável</h2>
-        <div class="card">
-            <p>
-                O <span class="highlight">Agro Sustentável</span> busca produzir alimentos de forma consciente, preservando o solo, a água, a biodiversidade e reduzindo impactos negativos no meio ambiente.
-            </p>
-            <p>Principais práticas sustentáveis:</p>
-            <ul>
-                <li>Uso racional de recursos naturais;</li>
-                <li>Plantio direto e rotação de culturas;</li>
-                <li>Proteção de nascentes e matas ciliares;</li>
-                <li>Redução do uso de agrotóxicos;</li>
-                <li>Educação ambiental e valorização do produtor rural.</li>
-            </ul>
-            <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=800&q=80" alt="Plantação sustentável">
-        </div>
-    </section>
-   
-    <section id="valores">
-        <h2>Valores do Agrinho</h2>
-        <div class="card">
-            <p>O projeto Agrinho incentiva a prática de valores essenciais para a vida em sociedade:</p>
-            <ul>
-                <li>Respeito ao próximo</li>
-                <li>Solidariedade</li>
-                <li>Responsabilidade</li>
-                <li>Cidadania</li>
-                <li>Preservação ambiental</li>
-                <li>Valorização do campo e da cidade</li>
-            </ul>
-            <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=800&q=80" alt="Valores do Agrinho">
-        </div>
-    </section>
+            <div id="resultBox" class="status-ideal">
+                <h2 id="statusTitle">✅ Condição Ideal</h2>
+                <p id="statusMessage">A umidade do solo está adequada. Não é necessário ligar a irrigação agora.</p>
+            </div>
+        </main>
 
-    <section id="atividade">
-        <h2>Atividades e Aprendizado</h2>
-        <div class="card">
-            <p>Participar do Agrinho permite aprender brincando e praticando:</p>
-            <ul>
-                <li>Oficinas de sustentabilidade;</li>
-                <li>Produção de hortas escolares;</li>
-                <li>Projetos de preservação ambiental;</li>
-                <li>Trabalhos sobre cidadania e ética;</li>
-                <li>Apresentações e feiras educativas.</li>
-            </ul>
-            <button onclick="mostrarMensagem()">Clique para Saber Mais</button>
-            <p id="mensagem"></p>
-        </div>
-    </section>
-</main>
+        <footer>
+            <p>Projeto Agrinho 2026 - Desenvolvido por Isaac Santin</p>
+        </footer>
+    </div>
 
-<footer>
-    <p>Projeto Agrinho 2026 - Desenvolvido por Isaac Santin</p>
-</footer>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
