@@ -1,62 +1,97 @@
-document.getElementById('receitaForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+// --- CONFIGURAÇÃO ---
+// Coloque aqui o número de WhatsApp da sua esposa (com código do país e DDD). 
+// Exemplo: 5546999999999 (55 = Brasil, 46 = DDD da região de Clevelândia)
+const numeroWhatsApp = "5546999999999"; 
 
-    const problema = document.getElementById('problema').value;
-    const litros = parseFloat(document.getElementById('litros').value) || 0;
+// Função para formatar o valor em Reais (R$)
+function formatarMoeda(valor) {
+    return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+}
 
-    let nomeReceita = "";
-    let listaIngredientes = "";
-    let modoPreparo = "";
+// Função que calcula o total em tempo real
+function calcularTotal() {
+    let total = 0;
 
-    // Lógica matemática para as proporções orgânicas
-    if (problema === "pulgoes") {
-        nomeReceita = "🛡️ Calda de Sabão com Alho (Inseticida Natural)";
-        
-        // Proporção base: 10g de sabão e 1 dente de alho por litro
-        let sabao = 10 * litros; 
-        let alho = 1 * litros; 
+    // Pega o valor do bolo
+    const selectBolo = document.getElementById('bolo');
+    total += parseFloat(selectBolo.value);
 
-        listaIngredientes = `
-            <li><strong>Sabão neutro em barra:</strong> ${sabao} gramas (ralado)</li>
-            <li><strong>Alho:</strong> ${alho} dente(s) (amassados)</li>
-            <li><strong>Água:</strong> ${litros} litro(s)</li>
-        `;
-        modoPreparo = "Ferva uma pequena parte da água para derreter o sabão ralado. Desligue o fogo, misture o alho amassado e deixe curtir (descansar) por 24 horas. Coe bem o líquido e misture com o restante da água fria no pulverizador. Aplique nas folhas no final da tarde.";
+    // Pega o valor da embalagem
+    const selectEmbalagem = document.getElementById('embalagem');
+    total += parseFloat(selectEmbalagem.value);
 
-    } else if (problema === "lagartas") {
-        nomeReceita = "🛡️ Solução de Óleo de Neem (Repelente e Inseticida)";
-        
-        // Proporção base: 10ml de neem e 5ml de detergente natural por litro
-        let neem = 10 * litros;
-        let detergente = 5 * litros;
+    // Pega as quantidades de docinhos e multiplica pelo preço de cada um
+    const doces = document.querySelectorAll('.qtd-doce');
+    doces.forEach(input => {
+        const qtd = parseInt(input.value) || 0;
+        const preco = parseFloat(input.getAttribute('data-preco'));
+        total += (qtd * preco);
+    });
 
-        listaIngredientes = `
-            <li><strong>Óleo de Neem (Nim):</strong> ${neem} ml</li>
-            <li><strong>Detergente neutro (para ajudar a fixar na folha):</strong> ${detergente} ml</li>
-            <li><strong>Água:</strong> ${litros} litro(s)</li>
-        `;
-        modoPreparo = "Coloque a água no pulverizador, adicione o óleo de Neem e o detergente neutro. Agite bem até formar uma mistura homogênea. Pulverize sobre as plantas atingidas ao final do dia para evitar que a luz forte do sol queime as folhas molhadas com óleo.";
+    // Atualiza o texto na tela
+    document.getElementById('valorTotal').innerText = formatarMoeda(total);
+}
 
-    } else if (problema === "fungos") {
-        nomeReceita = "🛡️ Calda de Leite (Fungicida Natural)";
-        
-        // Proporção base: 10% de leite (100ml) para 90% de água (900ml) por litro final
-        let leiteLitros = (litros * 0.1).toFixed(2);
-        let aguaLitros = (litros * 0.9).toFixed(2);
+// Adiciona "ouvintes" para recalcular sempre que o cliente mexer em algum campo
+document.getElementById('bolo').addEventListener('change', calcularTotal);
+document.getElementById('embalagem').addEventListener('change', calcularTotal);
+const inputsDoces = document.querySelectorAll('.qtd-doce');
+inputsDoces.forEach(input => {
+    input.addEventListener('input', calcularTotal);
+});
 
-        listaIngredientes = `
-            <li><strong>Leite cru (direto da vaca, sem ferver):</strong> ${leiteLitros} litro(s)</li>
-            <li><strong>Água limpa:</strong> ${aguaLitros} litro(s)</li>
-            <li><em>Total da mistura: ${litros} litro(s)</em></li>
-        `;
-        modoPreparo = "Misture o leite cru na água diretamente dentro do pulverizador e agite levemente. Ao contrário dos inseticidas, esta calda deve ser aplicada <strong>sob a luz do sol</strong> (preferencialmente de manhã), pois os raios UV ativam as proteínas do leite para combater os fungos (como o Oídio).";
+// Ação do botão de Enviar por WhatsApp
+document.getElementById('pedidoForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita que a página recarregue
+
+    let totalCalculado = 0;
+    let mensagem = "Olá! Gostaria de fazer uma encomenda. Aqui estão os detalhes do meu pedido:\n\n";
+
+    // Dados do Bolo
+    const selectBolo = document.getElementById('bolo');
+    if (selectBolo.value > 0) {
+        const nomeBolo = selectBolo.options[selectBolo.selectedIndex].getAttribute('data-nome');
+        mensagem += `🎂 *Bolo:* ${nomeBolo}\n`;
+        totalCalculado += parseFloat(selectBolo.value);
     }
 
-    // Atualiza a interface com a receita montada
-    document.getElementById('nome-receita').innerText = nomeReceita;
-    document.getElementById('lista-ingredientes').innerHTML = listaIngredientes;
-    document.getElementById('modo-preparo').innerHTML = modoPreparo;
+    // Dados dos Docinhos
+    let temDoce = false;
+    const doces = document.querySelectorAll('.qtd-doce');
+    doces.forEach(input => {
+        const qtd = parseInt(input.value) || 0;
+        if (qtd > 0) {
+            if (!temDoce) {
+                mensagem += `\n🍬 *Docinhos:*\n`;
+                temDoce = true;
+            }
+            const nomeDoce = input.getAttribute('data-nome');
+            const preco = parseFloat(input.getAttribute('data-preco'));
+            const subtotalDoce = qtd * preco;
+            mensagem += `- ${qtd}x ${nomeDoce} (${formatarMoeda(subtotalDoce)})\n`;
+            totalCalculado += subtotalDoce;
+        }
+    });
 
-    // Exibe o resultado com a animação
-    document.getElementById('resultado').className = 'resultado-visivel';
+    // Dados da Embalagem
+    const selectEmbalagem = document.getElementById('embalagem');
+    const nomeEmbalagem = selectEmbalagem.options[selectEmbalagem.selectedIndex].getAttribute('data-nome');
+    mensagem += `\n🎁 *Embalagem:* ${nomeEmbalagem}\n`;
+    totalCalculado += parseFloat(selectEmbalagem.value);
+
+    // Total Final
+    mensagem += `\n💰 *VALOR TOTAL: ${formatarMoeda(totalCalculado)}*\n\n`;
+    mensagem += `Aguardo a confirmação do pedido e as informações para pagamento. Obrigado(a)!`;
+
+    // Verifica se a pessoa selecionou pelo menos alguma coisa
+    if (totalCalculado === 0) {
+        alert("Por favor, adicione algum item ao seu pedido antes de enviar.");
+        return;
+    }
+
+    // Codifica a mensagem para o formato de link da internet e abre o WhatsApp
+    const textoCodificado = encodeURIComponent(mensagem);
+    const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${textoCodificado}`;
+    
+    window.open(linkWhatsApp, '_blank');
 });
