@@ -37,7 +37,7 @@ Para garantir a viabilidade e interatividade em tempo real, utilizamos tecnologi
 
 Como o site está hospedado no GitHub Pages, você pode acessá-lo diretamente de qualquer navegador de internet, seja no celular ou no computador, através do link gerado pelo GitHub:
 
-**[Insira aqui o link do seu GitHub Pages gerado]**
+**https://thaissilvaantunes-pixel.github.io/Agrinho2026/**
 
 ---
 
