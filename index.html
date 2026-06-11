@@ -2,81 +2,93 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo Interativo - Doces & Bolos</title>
+    <title>Agrinho 2026 - Isaac Santin</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>🧁 Doces & Delícias</h1>
-        <p>Monte o seu pedido personalizado e envie direto para o nosso WhatsApp!</p>
-    </header>
 
-    <main>
-        <form id="pedidoForm">
-            <!-- SEÇÃO DE BOLOS -->
-            <section class="menu-section">
-                <h2>🎂 Escolha o seu Bolo</h2>
-                <div class="input-group">
-                    <label for="bolo">Sabor e Tamanho:</label>
-                    <select id="bolo">
-                        <option value="0" data-nome="Nenhum">Nenhum bolo</option>
-                        <option value="85" data-nome="Bolo de Chocolate (1.5kg) - R$ 85,00">Bolo de Chocolate (1.5kg) - R$ 85,00</option>
-                        <option value="110" data-nome="Bolo de Morango com Ninho (1.5kg) - R$ 110,00">Bolo de Morango com Ninho (1.5kg) - R$ 110,00</option>
-                        <option value="150" data-nome="Bolo Festa Red Velvet (2kg) - R$ 150,00">Bolo Festa Red Velvet (2kg) - R$ 150,00</option>
-                    </select>
-                </div>
-            </section>
+<header>
+    <h1>Projeto Agrinho 2026</h1>
+    <h2>Desenvolvido por Isaac Santin</h2>
+</header>
 
-            <!-- SEÇÃO DE DOCINHOS -->
-            <section class="menu-section">
-                <h2>🍬 Centos de Docinhos</h2>
-                <p class="dica">Digite a quantidade de centos (ex: 1 = 100 docinhos, 2 = 200 docinhos)</p>
-                
-                <div class="input-group doces-grid">
-                    <div class="doce-item">
-                        <label for="brigadeiro">Brigadeiro Tradicional (R$ 70/cento)</label>
-                        <input type="number" id="brigadeiro" class="qtd-doce" data-preco="70" data-nome="Cento de Brigadeiro" min="0" placeholder="0">
-                    </div>
-                    <div class="doce-item">
-                        <label for="beijinho">Beijinho de Coco (R$ 70/cento)</label>
-                        <input type="number" id="beijinho" class="qtd-doce" data-preco="70" data-nome="Cento de Beijinho" min="0" placeholder="0">
-                    </div>
-                    <div class="doce-item">
-                        <label for="surpresa">Surpresa de Uva (R$ 85/cento)</label>
-                        <input type="number" id="surpresa" class="qtd-doce" data-preco="85" data-nome="Cento de Surpresa de Uva" min="0" placeholder="0">
-                    </div>
-                </div>
-            </section>
+<nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#agro">Agro Sustentável</a>
+    <a href="#valores">Valores do Agrinho</a>
+    <a href="#atividade">Atividades</a>
+</nav>
 
-            <!-- SEÇÃO DE CAIXA/EMBALAGEM -->
-            <section class="menu-section">
-                <h2>🎁 Embalagem Personalizada</h2>
-                <div class="input-group">
-                    <label for="embalagem">Tipo de Caixa:</label>
-                    <select id="embalagem">
-                        <option value="0" data-nome="Caixa Padrão Branca">Caixa Padrão Branca (Grátis)</option>
-                        <option value="15" data-nome="Caixa Presente com Laço - R$ 15,00">Caixa Presente com Laço - R$ 15,00</option>
-                        <option value="25" data-nome="Caixa Luxo Transparente - R$ 25,00">Caixa Luxo Transparente - R$ 25,00</option>
-                    </select>
-                </div>
-            </section>
+<main>
+    <section id="sobre">
+        <h2>Sobre o Projeto Agrinho</h2>
+        <div class="card">
+            <p>
+                O Projeto <span class="highlight">Agrinho</span> é uma iniciativa que incentiva crianças e jovens a refletirem sobre valores sociais, cidadania, sustentabilidade e a importância da conexão entre o campo e a cidade.
+            </p>
+            <p>
+                Ele promove ações educativas que ensinam a cuidar do meio ambiente, valorizar a produção agrícola e contribuir para uma sociedade mais justa e consciente.
+            </p>
+            <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80" alt="Campo e natureza">
+        </div>
+    </section>
 
-            <!-- RESUMO E BOTÃO WHATSAPP -->
-            <section class="checkout-section">
-                <h2>Resumo do Pedido</h2>
-                <div class="total-box">
-                    <span>Total Estimado:</span>
-                    <strong id="valorTotal">R$ 0,00</strong>
-                </div>
-                
-                <button type="submit" class="btn-whatsapp">
-                    📲 Enviar Pedido por WhatsApp
-                </button>
-            </section>
-        </form>
-    </main>
+    <section id="agro">
+        <h2>Agro Sustentável</h2>
+        <div class="card">
+            <p>
+                O <span class="highlight">Agro Sustentável</span> busca produzir alimentos de forma consciente, preservando o solo, a água, a biodiversidade e reduzindo impactos negativos no meio ambiente.
+            </p>
+            <p>Principais práticas sustentáveis:</p>
+            <ul>
+                <li>Uso racional de recursos naturais;</li>
+                <li>Plantio direto e rotação de culturas;</li>
+                <li>Proteção de nascentes e matas ciliares;</li>
+                <li>Redução do uso de agrotóxicos;</li>
+                <li>Educação ambiental e valorização do produtor rural.</li>
+            </ul>
+            <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=800&q=80" alt="Plantação sustentável">
+        </div>
+    </section>
+   
+    <section id="valores">
+        <h2>Valores do Agrinho</h2>
+        <div class="card">
+            <p>O projeto Agrinho incentiva a prática de valores essenciais para a vida em sociedade:</p>
+            <ul>
+                <li>Respeito ao próximo</li>
+                <li>Solidariedade</li>
+                <li>Responsabilidade</li>
+                <li>Cidadania</li>
+                <li>Preservação ambiental</li>
+                <li>Valorização do campo e da cidade</li>
+            </ul>
+            <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=800&q=80" alt="Valores do Agrinho">
+        </div>
+    </section>
 
-    <script src="script.js"></script>
+    <section id="atividade">
+        <h2>Atividades e Aprendizado</h2>
+        <div class="card">
+            <p>Participar do Agrinho permite aprender brincando e praticando:</p>
+            <ul>
+                <li>Oficinas de sustentabilidade;</li>
+                <li>Produção de hortas escolares;</li>
+                <li>Projetos de preservação ambiental;</li>
+                <li>Trabalhos sobre cidadania e ética;</li>
+                <li>Apresentações e feiras educativas.</li>
+            </ul>
+            <button onclick="mostrarMensagem()">Clique para Saber Mais</button>
+            <p id="mensagem"></p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Projeto Agrinho 2026 - Desenvolvido por Isaac Santin</p>
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
