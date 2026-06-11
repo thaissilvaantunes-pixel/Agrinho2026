@@ -1,29 +1,43 @@
-# AgroTec Sustentável
+# 🌱 Projeto Agro Sustentável — Calculadora de Pegada de Carbono
 
-Projeto desenvolvido para o Concurso Agrinho 2026.
+Este é um projeto escolar interativo desenvolvido para o Ensino Médio, focado em unir tecnologia e sustentabilidade no campo. O objetivo principal é fornecer uma ferramenta simples e acessível para que agricultores possam medir e entender o impacto ambiental de suas atividades através do cálculo da pegada de carbono.
 
-## Tema
+Todo o processo de desenvolvimento e hospedagem foi feito diretamente no **GitHub**, sem a necessidade de um ambiente de desenvolvimento local (IDE).
 
-Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente.
+---
 
-## Tecnologias
+## 📝 O que é a Pegada de Carbono?
 
-- HTML5
-- CSS3
-- JavaScript
+A pegada de carbono é um indicador ambiental que mede o volume total de gases de efeito estufa (GEE) emitidos direta ou indiretamente por uma pessoa, organização, evento ou produto. 
 
-## Funcionalidades
+Na agricultura, compreender esse número é fundamental para adotar práticas mais sustentáveis, reduzir o desperdício de insumos e ajudar a diminuir os impactos das mudanças climáticas.
 
-- Comedouro automático
-- Compostagem inteligente
-- Simulador rural
-- Layout responsivo
-- Galeria do projeto
+## 🚀 Funcionalidades do Mini Aplicativo
 
-## Publicação
+O site possui um simulador prático focado em três pontos principais de consumo em uma propriedade rural:
 
-O projeto foi desenvolvido para demonstrar aplicações de agrorobótica e sustentabilidade no ambiente rural.
+1. **Consumo de Diesel (Litros):** Impacto gerado pelo uso de tratores e maquinários agrícolas.
+2. **Uso de Fertilizantes (Kg):** Emissões geradas pela aplicação de adubos na lavoura.
+3. **Consumo de Energia (kWh):** Impacto da eletricidade usada na propriedade.
 
-## Tag Oficial
+O usuário preenche os dados mensais e o aplicativo calcula instantaneamente a estimativa de emissões em quilogramas de CO₂, fornecendo um feedback visual para auxiliar na tomada de decisão do agricultor.
 
-agrinho
+## 🛠️ Tecnologias Utilizadas
+
+Para garantir a simplicidade e a viabilidade do projeto, utilizamos apenas as tecnologias fundamentais do desenvolvimento web:
+
+* **HTML:** Estruturação semântica do site e do formulário interativo.
+* **CSS:** Estilização responsiva com uma paleta de cores voltada para o meio ambiente e a agricultura.
+* **JavaScript:** Lógica por trás do cálculo matemático de emissões e interatividade da interface.
+* **GitHub e GitHub Pages:** Versionamento de código e hospedagem gratuita do site diretamente pelo navegador.
+
+## 💻 Como Acessar o Projeto
+
+Como o site está hospedado no GitHub Pages, você pode acessá-lo diretamente de qualquer navegador de internet, seja no celular ou no computador, através do link gerado pelo GitHub:
+
+**[Insira aqui o link do seu GitHub Pages gerado]**
+
+---
+
+**Desenvolvido por:** [Seu Nome ou Nome do Grupo]  
+**Contexto:** Projeto de Ensino Médio
